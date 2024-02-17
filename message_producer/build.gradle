@@ -16,13 +16,12 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	
 	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webflux-ui
 	implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:2.3.0'
 	
-	// Kubernetes dependency (currently unecessary)
+	// Kubernetes dependency (currently unnecessary)
 	// https://central.sonatype.com/artifact/org.springframework.cloud/spring-cloud-starter-kubernetes-client-all/3.1.0
 	// implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes-client-all:3.1.0'
 	
