@@ -1,0 +1,24 @@
+# Custom deployment manifest
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-dpl
+  labels:
+    app: mc-dpl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mc-dpl
+  template:
+    metadata:
+      labels:
+        app: mc-dpl
+    spec:
+      containers:
+      - name: message-consumer
+        image: rg532/spring-k8s-demo:message-consumer
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
