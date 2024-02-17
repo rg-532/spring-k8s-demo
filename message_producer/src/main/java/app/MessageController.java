@@ -24,15 +24,15 @@ public class MessageController {
 	@PostMapping(
 			consumes = {MediaType.APPLICATION_JSON_VALUE},
 			produces = {MediaType.APPLICATION_JSON_VALUE})
-		public Mono<MessageBoundary> createMessage (
-				@RequestBody MessageBoundary message) {
-			this.messages.add(message);
-			return Mono.just(this.messages.get(this.messages.size() - 1));
-		}
+	public Mono<MessageBoundary> createMessage (
+			@RequestBody MessageBoundary message) {
+		this.messages.add(message);
+		return Mono.just(this.messages.get(this.messages.size() - 1));
+	}
 	
 	@GetMapping(
 			produces = {MediaType.TEXT_EVENT_STREAM_VALUE})
-		public Flux<MessageBoundary> getAllMessages (){
-			return Flux.fromIterable(this.messages);
-		}
+	public Flux<MessageBoundary> getAllMessages (){
+		return Flux.fromIterable(this.messages);
+	}
 }
