@@ -1,0 +1,13 @@
+# Custom service manifest
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mp-svc
+spec:
+  type: NodePort
+  selector:
+    app: mp-dpl
+  ports:
+  - port: 8081
+    targetPort: 8081
